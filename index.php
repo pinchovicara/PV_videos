@@ -12,7 +12,7 @@
 		}
 		
 		$bdd->exec("SET CHARACTER SET utf8");
-		$reponse = $bdd->query('SELECT `id_video`, `titre_video`, `code_video`, YEAR(`date_video`) AS annee_video, `codehebergeur_video`, `commentaire_video` FROM `videos` ORDER BY date_video DESC');
+		$reponse = $bdd->query('SELECT `id_video`, `titre_video`, `code_video`, YEAR(`date_video`) AS annee_video, `codehebergeur_video`, `commentaire_video` FROM `pv_videos` ORDER BY date_video DESC');
 
 		$resultat = getCodeListeVideo($reponse);
 
