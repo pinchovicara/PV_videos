@@ -1,9 +1,16 @@
 <?php
 
+	require_once 'conf/conf.php';
+
 	function getListeVideo(){
 		$resultat = '';
 
-		$bdd = new PDO('mysql:host=localhost;dbname=databasename', 'user','pasword');
+		try {
+			$bdd = new PDO('mysql:host='.$GLOBALS['dbhost'].';dbname='.$GLOBALS['dbname'], $GLOBALS['dbuser'],$GLOBALS['dbpwd']);
+		} catch (Exception $e) {
+			die('Erreur de connexion à la base de données');
+		}
+		
 		$bdd->exec("SET CHARACTER SET utf8");
 		$reponse = $bdd->query('SELECT `id_video`, `titre_video`, `code_video`, YEAR(`date_video`) AS annee_video, `codehebergeur_video`, `commentaire_video` FROM `videos` ORDER BY date_video DESC');
 
