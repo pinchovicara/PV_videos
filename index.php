@@ -105,7 +105,7 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<title>Galerie vidéo</title>
+		<title><?php echo $GLOBALS['title']; ?></title>
 		<style type="text/css">
 			body{
 				margin: 0;

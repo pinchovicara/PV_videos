@@ -5,4 +5,6 @@
 	$GLOBALS['dbuser'] = 'username';
 	$GLOBALS['dbpwd'] = 'password';
 
+	$GLOBALS['title'] = 'Titre de la page';
+
 ?>
